@@ -1,0 +1,29 @@
+.contaner{
+    background: wheat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    
+}
+.tableContener {
+  margin-left: 10px;
+  width: 70%;
+  margin: auto;
+}
+.signin {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: min-content;
+  margin-left: 20px;
+  position: relative; /* 2 */
+  top: 50%; /* 3 */
+  transform: translate(0, -50%); /* 4 */
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin: 50px;
+}

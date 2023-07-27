@@ -1,0 +1,63 @@
+/*.small {
+  /*border: 2px solid blue;
+
+  
+}*/
+.extramargin{
+  margin-top: 32px;
+  margin-bottom: 20px;
+}
+.tablede{
+ /* border: 2px solid black;*/
+  width: 90%;
+  display: flex;
+  margin: auto;
+}
+.cart-page-container {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+  /*border: 2px solid red;*/
+  margin-top: 50px;
+  width: 40%;
+  
+}
+/*
+.cart-page-container table {
+  flex: 65%;
+  border-collapse: collapse;
+}
+.cart-page-container table td {
+  border: 1px solid #ccc;
+  padding: 15px;
+}*/
+.price-details {
+  flex: 35%;
+  margin: 0 30px;
+  
+}
+.price-details .adjust-price {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.price-details .adjust-price span {
+  font-size: 20px;
+}
+.user{
+  
+    /*border: 2px solid blue;*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.name{
+  /*border: 2px solid red;*/
+    margin-left: 20px;
+    text-align: start;
+    align-items: start;
+}

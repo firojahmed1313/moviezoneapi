@@ -1,0 +1,24 @@
+.product-container{
+    /*border: 2px solid red;*/
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+}
+.product-item{
+    /*border: 2px solid blue;*/
+    margin: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    width: 23%;
+}
+.product-item img{
+    height: 100px;
+    width: 90px;
+    /*border: 2px solid black;*/
+
+}
+Button:hover{
+    color: red;
+}

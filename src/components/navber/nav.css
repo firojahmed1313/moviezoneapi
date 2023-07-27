@@ -1,0 +1,40 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
+.navlinkstyle{
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: black;
+    margin-left: 20px;
+}
+.navlinkstyle :hover{
+    color: white;
+    background: black;
+}
+.imgs img{
+    height: 50px;
+    width: 150px;
+}
+.choto{
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 30px;
+    
+}
+.navber{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.cart-div span{
+    border: 2px solid red;
+}

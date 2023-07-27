@@ -1,0 +1,21 @@
+.videop{
+    /*border: 2px sold black;*/
+
+    width: 90%;
+    margin: 20px;
+    display: flex;
+
+}
+.videostyle{
+    /*border: 12px sold red;*/
+    margin: auto;
+    width:90%;
+    height:90vh;
+}
+.color_red{
+    color: brown;
+}
+.accordionStyle{
+    width: 20%;
+
+}

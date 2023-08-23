@@ -7,7 +7,7 @@ export const productData = (state = { filteredMovies: [], movies: [] }, action) 
             console.warn("PRODUCT_LIST condition ", action)
             console.log("firoj4")
             return {...state , movies: action.payload ,filteredMovies:action.payload }
-        case SEARCH_MOVIES:
+        /*case SEARCH_MOVIES:
             const searchTerm = action.payload;
             
             console.log("r3")
@@ -48,7 +48,7 @@ export const productData = (state = { filteredMovies: [], movies: [] }, action) 
         
            
             return { ...state, filteredMovies};
-        
+        */
         default:
             return state
     }

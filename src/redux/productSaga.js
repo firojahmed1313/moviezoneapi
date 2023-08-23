@@ -1,6 +1,7 @@
 import { takeEvery, put, call } from 'redux-saga/effects'
 import { PRODUCT_LIST,SEARCH_MOVIES,CATAGORY_PRODUCT, CATAGORY_MOVIES, SEARCH_PRODUCT, SET_PRODUCT_LIST } from './constant';
 import movieData from './movie.json';
+import { httpGet } from '../utils/api.js';
 
 
 function* getProducts() {
@@ -8,26 +9,61 @@ function* getProducts() {
 
     try {
         
-        yield put({type: SET_PRODUCT_LIST, payload: movieData.movies })
+        let { data } = yield httpGet("https://api.themoviedb.org/3/discover/movie?api_key=6ff4c3806365f19269082c91227e14bc");
+        //let { data } = yield httpGet("https://api.themoviedb.org/3/trending/all/day?api_key=6ff4c3806365f19269082c91227e14bc");
+
+        console.warn("product saga is called", data)
+        yield put({type: SET_PRODUCT_LIST, payload: data.results})
     } catch (error) {
         console.warn(error)
     }
+    /*
+    let data = yield fetch('http://localhost:3030/movies');
+    data = yield data.json();
+    console.warn("action is called", data)
+    yield put({type: SET_PRODUCT_LIST, data})
+    */
     
 }
-
+//https://api.themoviedb.org/3/movie/976573/videos?api_key=6ff4c3806365f19269082c91227e14bc
+//https://api.themoviedb.org/3/search/movie?api_key=6ff4c3806365f19269082c91227e14bc&language=en-US&query=${searchText}&page=${page}&include_adult=false` &language=en-US&sort_by=popularity.desc&include_adult=true&include_video=true&page=1
+//https://api.themoviedb.org/3/genre/${type}/list?api_key=6ff4c3806365f19269082c91227e14bc&language=en-US
+//https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&api_key=6ff4c3806365f19269082c91227e14bc
 function* searchProducts(searchTerm) {
-    //console.log(data)
-    //let result = yield fetch(`http://localhost:3030/movies?q=${data.query}`);
-    //result = yield result.json();
-    //console.warn("action is called", result)
-    console.log("r2")
-    yield put({type: SEARCH_MOVIES, payload: searchTerm })
+    //const searchTer="t"
+    /*const url=`https://api.themoviedb.org/3/search/movie?query=${searchTer}&api_key=6ff4c3806365f19269082c91227e14bc`
+        console.log(url)*/
+    //console.log(searchTerm.payload)
+    try {
+        const searchTer=searchTerm.payload
+        const url=`https://api.themoviedb.org/3/search/movie?query=${searchTer}&api_key=6ff4c3806365f19269082c91227e14bc`
+        console.log(url)
+        let { data } = yield httpGet(url);
+        console.warn("searchProducts saga is called", data)
+        console.log("r2")
+        yield put({type: SET_PRODUCT_LIST, payload: data.results})
+    } 
+    catch (error) {
+        console.warn(error)
+    }
+    
+    
 }
+//https://api.themoviedb.org/3/genre/${searchTermc}/list?api_key=6ff4c3806365f19269082c91227e14bc
 function* catagoryProducts(searchTermc) {
-    //console.log(data)
-    //let result = yield fetch(`http://localhost:3030/movies?q=${data.query}`);
-    //result = yield result.json();
-    //console.warn("action is called", result)
+    console.log(searchTermc.payload)
+    try {
+        const searchTermcr=searchTermc.payload
+        const url1=`https://api.themoviedb.org/3/search/movie?query=${searchTermcr}&api_key=6ff4c3806365f19269082c91227e14bc`
+        console.log(url1)
+        let { data } = yield httpGet(url1);
+        console.warn("catagoryProducts saga is called", data)
+        console.log("p5")
+        yield put({type: SET_PRODUCT_LIST, payload: data.results})
+    } 
+    catch (error) {
+        console.warn(error)
+    }
     console.log("p2")
     yield put({type: CATAGORY_MOVIES, payload: searchTermc })
 }

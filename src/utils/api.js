@@ -1,21 +1,50 @@
-/*import axios from "axios";
+import axios from "axios";
 
-const BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_TOKEN = import.meta.env.VITE_APP_TMDB_TOKEN;
-
-const headers = {
-    Authorization: "bearer " + TMDB_TOKEN,
+export const httpGet = async (url) => {
+    try {
+        let res = await axios.get(url);
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
 };
 
-export const fetchDataFromApi = async (url, params) => {
+export const httpPost = async (url, payload = {}) => {
     try {
-        const { data } = await axios.get(BASE_URL + url, {
-            headers,
-            params,
-        });
-        return data;
+        return await axios.post(url, payload);
     } catch (err) {
-        console.log(err);
-        return err;
+        return console.log(err);
     }
-};*/
+};
+
+export const httpPut = async (url, payload = {}) => {
+    try {
+        return await axios.put(url, payload);
+    } catch (err) {
+        return console.log(err);
+    }
+};
+
+export const httpDelete = async (url) => {
+    try {
+        return await axios.delete(url);
+    } catch (err) {
+        return console.log(err);
+    }
+};
+
+/*
+async function fetchData() {
+  try {
+    const response = await axios.get('API_URL');
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+}
+
+// Call the fetchData function
+fetchData()
+*/

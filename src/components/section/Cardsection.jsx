@@ -23,10 +23,11 @@ const Cardsection = () => {
   let amount =
     cartData.length &&
     cartData
-      .map((item) => item.dailyRentalRate)
+      .map((item) => item.vote_average*20)
       .reduce((prev, next) => prev + next);
   console.warn(amount);
-  let tax = (amount * 18) / 100;
+  let x = (amount * 18) / 100;
+  let tax = Math.floor(x);
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -74,15 +75,15 @@ const Cardsection = () => {
               {cartData.map((item) => (
                 <StyledTableRow key={item.key}>
                   <StyledTableCell component="th" scope="row">
-                    {item.Title}
+                    {item.title}
                   </StyledTableCell>
                   <StyledTableCell align="center">
-                    {item.numberInStock}
+                    {item.vote_count}
                   </StyledTableCell>
                   <StyledTableCell align="center">
-                    {item.dailyRentalRate}
+                    {item.vote_average*20}
                   </StyledTableCell>
-                  <StyledTableCell align="right">{item.Genre}</StyledTableCell>
+                  <StyledTableCell align="right">{item.id}</StyledTableCell>
                   <StyledTableCell align="right">
                     <Button
                       onClick={() => navigate(`/videop/${item.id}`)}

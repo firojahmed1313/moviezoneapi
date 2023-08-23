@@ -8,16 +8,21 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Details = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  return (
-    isAuthenticated &&(<>
-      <Nav/>
-      <UserSection/>
-      <Cardsection/>
-      <Footer/>
-    </>)
+  if(isAuthenticated){
+    return (
 
+      (<>
+        <Nav/>
+        <UserSection/>
+        <Cardsection/>
+        <Footer/>
+      </>)  
+    )
+  }
+  else{
+    alert("plz login")
     
-  )
+  }
 }
 
 export default Details

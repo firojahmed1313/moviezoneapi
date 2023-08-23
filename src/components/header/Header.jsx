@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { productList, productSearch } from '../../redux/productAction'
 import './header.css'
 const Header = () => {
-  const result = useSelector((state) => state.movies);
+  const result = useSelector((state) => state.movies.filteredMovies);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(productList());

@@ -60,7 +60,7 @@ const Cardsection = () => {
       </Button>
       <h1 className="extramargin">Playlist Page</h1>
       <div className="tablede">
-        <TableContainer component={Paper} sx={{ maxWidth: "60%" }}>
+        <TableContainer className="tableContainer" component={Paper} sx={{ }}>
           <Table sx={{ maxWidth: "100%" }} aria-label="customized table">
             <TableHead>
               <TableRow>
@@ -75,7 +75,7 @@ const Cardsection = () => {
               {cartData.map((item) => (
                 <StyledTableRow key={item.key}>
                   <StyledTableCell component="th" scope="row">
-                    {item.title}
+                    {(item.title) ? item.title : item.name}
                   </StyledTableCell>
                   <StyledTableCell align="center">
                     {item.vote_count}

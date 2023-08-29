@@ -19,3 +19,34 @@
     width: 20%;
 
 }
+
+
+@media only screen and (max-width:800px){
+    .videop{
+        
+    
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .videohw{
+        height:60vh;
+
+    }
+    .videostyle{
+        
+        margin: auto;
+        width:100%;
+        height:80vh;
+    }
+    .accordionStyle{
+        width: 80%;
+        margin: auto;
+
+    
+    }
+    
+    
+}

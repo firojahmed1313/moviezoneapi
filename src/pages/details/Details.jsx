@@ -8,6 +8,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Details = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  /*return (
+
+    (<>
+      <Nav/>
+      <UserSection/>
+      <Cardsection/>
+      <Footer/>
+    </>)  
+  )*/
+  
   if(isAuthenticated){
     return (
 
@@ -21,7 +31,7 @@ const Details = () => {
   }
   else{
     alert("plz login")
-    
+    window.open('/', '_self');
   }
 }
 

@@ -34,7 +34,7 @@ const Admind = () => {
 
   return (
     <>
-      <div className="contaner">
+      <div className="anmincontaner">
         
         {error && <p style={{ color: "red" }}>{error}</p>}
         <div className="Adminsignin">

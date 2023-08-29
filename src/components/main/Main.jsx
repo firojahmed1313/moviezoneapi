@@ -47,7 +47,9 @@ const Main = () => {
       <Catagory />
       <div className="product-container">
         {movies.map((item) => {
-          const newtitle = item.title.substring(0, 13);
+
+          const newtitle =  (item.title) ? item.title.substring(0, 10) : item.name.substring(0, 10);
+          const oldtitle =  (item.title) ? item.title: item.name;
           let imagek 
           if(item.backdrop_path==null){
             imagek =image
@@ -82,7 +84,10 @@ const Main = () => {
                 }
               >
                 <Typography gutterBottom variant="h6" component="div">
-                  Name : {item.title.length >= 13 ? `${newtitle}..` : newtitle}
+                  Name : {oldtitle.length >= 10 ? `${newtitle}..` : oldtitle}
+                  
+                  {//Name : {(item.title) ? item.title : item.name}
+                  }
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   <div>language : {item.original_language} </div>

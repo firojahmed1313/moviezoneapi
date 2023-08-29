@@ -22,3 +22,29 @@
 Button:hover{
     color: red;
 }
+.catagory{
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn{
+    /*border: 2px solid red;*/
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+
+@media only screen and (max-width:800px){
+
+    .catagory{
+        
+        flex-direction: column;
+    }
+    
+    .btnX{
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}

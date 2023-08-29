@@ -34,6 +34,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 const UserSection = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log(user)
   return (
 
     isAuthenticated &&(<>

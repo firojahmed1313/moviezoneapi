@@ -23,7 +23,7 @@ Button:hover{
     color: red;
 }
 .catagory{
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     display: flex;
     justify-content: space-around;
     align-items: center;

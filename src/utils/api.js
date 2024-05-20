@@ -5,7 +5,7 @@ export const httpGet = async (url) => {
         let res = await axios.get(url);
         return res;
     } catch (err) {
-        return console.log(err);
+        return console.warn(err);
     }
 };
 
